@@ -7,17 +7,13 @@
   padding: 15px;
 }
 .margin {
-  padding: 30px;
+  padding: 25px;
 }
 .now {
   padding: 30px;
 }
 .search-form {
   margin-top: 30px;
-}
-
-.down {
-  margin-left: 28px;
 }
 @media only screen and (max-width: 650px) {
   .search-form {
