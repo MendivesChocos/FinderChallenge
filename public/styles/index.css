@@ -1,0 +1,26 @@
+* {
+  font-family: "Proxima Nova";
+}
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.margin {
+  padding: 30px;
+}
+.now {
+  padding: 30px;
+}
+.search-form {
+  margin-top: 30px;
+}
+
+.down {
+  margin-left: 28px;
+}
+@media only screen and (max-width: 650px) {
+  .search-form {
+    display: none;
+  }
+}

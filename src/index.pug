@@ -4,6 +4,7 @@ html(lang="es")
         title Finder challenge
         meta(charset="utf-8")
         meta(viewport="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
         link(href="https://fonts.googleapis.com/css?family=Proxima+Nova", rel="stylesheet", type="text/css")
         link(href="/vendor/pure/pure-min.css", rel="stylesheet")
         link(href="/styles/index.css", rel="stylesheet")
@@ -11,14 +12,35 @@ html(lang="es")
     body
         .app.pure-g
             header.pure-u-1
-                .pure-u-1-3
-                    h1.logo Finder challenge!
-                .pure-u-7-24
-                    include blocks/search-form
-                .pure-u-1-3
+              .row
+                  .col-md-4
+                      h1.logo Finder challenge!
+                  .col-md-4
+                      include blocks/search-form
+                  .col-md-4
+                    .margin
+                      ul.nav.nav-pills(role='tablist')
+                        li(role='presentation')
+                          a(href='#') Guardar Bùsqueda
             aside.filters.pure-u-1-4
+
             content.pure-u-3-4
+              .row
+                .col-sm-6.col-md-4
+                  .thumbnail
+                    img(src='...', alt='...')
+                    .caption
+                      h3 Thumbnail label
+                      p ...
+
             footer.pure-u-1
+              nav(aria-label='...')
+                ul.pager
+                  li
+                    a(href='#') Previous
+                  li
+                    a(href='#') Next
+
 
         //- third party libraries
         script(src="/vendor/underscore/underscore-min.js")
