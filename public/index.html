@@ -8,6 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Proxima+Nova" rel="stylesheet" type="text/css">
     <link href="/vendor/pure/pure-min.css" rel="stylesheet">
     <link href="/styles/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/awesomplete.css">
+    <script src="/scripts/awesomplete.js" async=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore-min.js"></script>
+    <script src="/scripts/global.js"></script>
+    <script src="/scripts/search-form.js"></script>
+    <script src="/scripts/app.js"></script>
   </head>
   <body>
     <div class="app pure-g">
@@ -16,11 +23,11 @@
           <div class="col-md-4">
             <h1 class="logo">Finder challenge!</h1>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-10 col-xs-12">
             <div class="search-form">
-              <form class="pure-form">
-                <input class="pure-input-rounded" type="text">
-                <button class="pure-button" type="submit">Buscar</button>
+              <form class="pure-form" id="form">
+                <input class="pure-input-rounded" id="input" type="text">
+                <button class="pure-button" id="search" type="submit">Buscar</button>
               </form>
             </div>
           </div>
@@ -33,18 +40,30 @@
           </div>
         </div>
       </header>
-      <aside class="filters pure-u-1-4"></aside>
-      <content class="pure-u-3-4">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail"><img src="..." alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-              </div>
-            </div>
+      <aside class="filters pure-u-1-4">
+        <div class="center-block text-center">
+          <h2>Bùsquedas Guardadas</h2>
+          <div class="col-md-12 text-center">
+            <ul class="notList col-xs-12" id="list"></ul>
+          </div><br>
+          <h2>Categorías</h2>
+          <div class="col-md-12">
+            <ul class="notList col-xs-12" id="listCat">
+              <h5>Todos</h5>
+              <li class="text-center"><a href="#">Terror</a><br><a href="#">Comedia</a><br><a href="#">Drama</a></li>
+            </ul>
+          </div><br>
+          <h2>Idiomas</h2>
+          <div class="col-md-12">
+            <ul class="notList col-xs-12" id="listLang">
+              <h5>Todos</h5>
+              <li class="text-center"><a href="#">Inglés</a><br><a href="#">Español</a><br><a href="#">Portugués   </a></li>
+            </ul>
           </div>
         </div>
+      </aside>
+      <content class="pure-u-3-4">
+        <div class="row" id="blocksBooks"></div>
       </content>
       <footer class="pure-u-1">
         <nav aria-label="...">
@@ -55,9 +74,5 @@
         </nav>
       </footer>
     </div>
-    <script src="/vendor/underscore/underscore-min.js"></script>
-    <script src="/scripts/global.js"></script>
-    <script src="/scripts/search-form.js"></script>
-    <script src="/scripts/app.js"></script>
   </body>
 </html>

@@ -8,6 +8,17 @@ html(lang="es")
         link(href="https://fonts.googleapis.com/css?family=Proxima+Nova", rel="stylesheet", type="text/css")
         link(href="/vendor/pure/pure-min.css", rel="stylesheet")
         link(href="/styles/index.css", rel="stylesheet")
+        link(rel='stylesheet', href="/styles/awesomplete.css")  
+        
+        script(src='/scripts/awesomplete.js', async='')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+          //- third party libraries
+        script(src="/vendor/underscore/underscore-min.js")
+  
+          //- app scripts self
+        script(src="/scripts/global.js")
+        script(src="/scripts/search-form.js")
+        script(src="/scripts/app.js")
 
     body
         .app.pure-g
@@ -15,7 +26,7 @@ html(lang="es")
               .row
                   .col-md-4
                       h1.logo Finder challenge!
-                  .col-md-4
+                  .col-md-4.col-sm-10.col-xs-12
                       include blocks/search-form
                   .col-md-4
                     .margin
@@ -23,15 +34,36 @@ html(lang="es")
                         li(role='presentation')
                           a(href='#') Guardar Bùsqueda
             aside.filters.pure-u-1-4
-                
+                .center-block.text-center
+                  h2 Bùsquedas Guardadas
+                  .col-md-12.text-center
+                    ul#list.notList.col-xs-12
+                  br
+                  h2 Categorías
+                  .col-md-12
+                    ul#listCat.notList.col-xs-12
+                      h5 Todos
+                      li.text-center
+                        
+                        a(href='#') Terror
+                        br
+                        a(href='#') Comedia
+                        br
+                        a(href='#') Drama
+                  br
+                  h2 Idiomas
+                  .col-md-12
+                    ul#listLang.notList.col-xs-12
+                      h5 Todos
+                      li.text-center
+                        
+                        a(href='#') Inglés
+                        br
+                        a(href='#') Español
+                        br
+                        a(href='#') Portugués   
             content.pure-u-3-4
-              .row
-                .col-sm-6.col-md-4
-                  .thumbnail
-                    img(src='...', alt='...')
-                    .caption
-                      h3 Thumbnail label
-                      p ...
+              #blocksBooks.row
 
             footer.pure-u-1
               nav(aria-label='...')
@@ -42,10 +74,4 @@ html(lang="es")
                     a(href='#') Next
 
 
-        //- third party libraries
-        script(src="/vendor/underscore/underscore-min.js")
-
-        //- app scripts self
-        script(src="/scripts/global.js")
-        script(src="/scripts/search-form.js")
-        script(src="/scripts/app.js")
+        
