@@ -8,7 +8,7 @@ var JSON_FILE = '/books-schema.json';
  @method loadJSON
  source: https://codepen.io/KryptoniteDove/post/load-json-file-locally-using-pure-javascript
 */
-
+// Obtencion del JSON
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
@@ -22,14 +22,15 @@ function loadJSON(callback) {
     xobj.send(null);
 };
 
-
+// Se crea para la manipulacion de los datos en el JSON
 function deploy(idList) {
   var idNum = 'fila'+idList;
   document.getElementById(idNum).style.display = 'block';
 
 }
 
-
+// manipulacion de los id's de los datos 
+// recibidos del JSON
 function hide(idList){
   var idNum = 'fila'+idList;
 	document.getElementById(idNum).style.display = 'none';
@@ -46,9 +47,12 @@ function init() {
       // Parse JSON string into object
        actual_JSON = JSON.parse(response);
        var arrListBooks = [];
+       // Agregar los datos de los Libros
        $.each(actual_JSON.data, function(idx, obj) {
          arrListBooks.push(obj);
          //console.log(arrListBooks[idx]);
+         // Agregando el editar y eliminar
+         // y dando funcionalidad a las etiquetas mostradas
          $(`<div id="booksLibraryOne" class="col-sm-6 col-md-4 ">
                <div class="thumbnail booksLibraryOne">
                  <div class="caption">
@@ -61,7 +65,7 @@ function init() {
        })
 
 
-
+      //Agregar los datos de la categorías en la etiqueta de HTML
       $.each(actual_JSON.entities.categories, function(idx, obj) {
 
         $(`<li id="${idx}" class="">
@@ -71,7 +75,7 @@ function init() {
           `).appendTo('#listCat');
       });
 
-
+      // Agregar los datos de las busquedas almacenadas
       $.each(actual_JSON.entities.saved, function(idx, obj) {
         idList++;
         $(`<li id="${idx}" class="">
